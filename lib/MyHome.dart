@@ -32,7 +32,7 @@ class _MyHomeState extends State<MyHome> {
         _pickedFile = image;
         _imageBytes = imageBytes;
       });
-      print("Image in Binay: ${_imageBytes}");
+      print("Image in Binay: $_imageBytes");
     }
   }
 
@@ -59,7 +59,7 @@ class _MyHomeState extends State<MyHome> {
             children: [
               _imageBytes != null
                   ? Image.memory(_imageBytes!) // Display image from binary data
-                  : Text("No image selected"),
+                  : const Text("No image selected"),
               TextField(
                 controller: username,
                 decoration: const InputDecoration(
@@ -81,10 +81,10 @@ class _MyHomeState extends State<MyHome> {
                 height: 10,
               ),
               ElevatedButton.icon(
-                  icon: Icon(Icons.image),
+                  icon: const Icon(Icons.image),
                   onPressed: pickImage,
-                  label: Text("Upload Image")),
-              ElevatedButton(onPressed: addUser, child: Text("Add"))
+                  label: const Text("Upload Image")),
+              ElevatedButton(onPressed: addUser, child: const Text("Add"))
             ],
           ),
         ),
